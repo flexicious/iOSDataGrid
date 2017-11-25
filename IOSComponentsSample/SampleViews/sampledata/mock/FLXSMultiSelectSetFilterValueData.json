@@ -1,0 +1,9 @@
+ [
+  {"label":"Aflac", "state":"NJ"},
+  {"label":"Ambac", "state":"PA"},
+  {"label":"BestBuy", "state":"CT"},
+  {"label":"Berkshire", "state":"NY"},
+  {"label":"BP", "state":"NJ"},
+  {"label":"Company without state 1", "state":""},
+  {"label":"Company without state 2", "state":""}
+  ]

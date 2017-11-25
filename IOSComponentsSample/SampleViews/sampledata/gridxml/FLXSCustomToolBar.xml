@@ -1,0 +1,23 @@
+<grid creationComplete="styledPager_creationComplete" styleName="myGridStyle"
+      forcePagerRow="YES" pagerRowHeight="40">
+    <level childrenField="children" enableFilters="YES" headerHeight="22"
+           headerVerticalGridLineThickness="1" filterRowHeight="30"
+           pagerRenderer="PagerControl">
+        <columns>
+            <column type="checkbox"/>
+            <column headerText="Province" dataField="province" filterControl="TextInput" filterOperation="BeginsWith"/>
+            <column headerText="City" dataField="city" filterControl="TextInput" filterOperation="BeginsWith"/>
+            <column headerText="City Rep" dataField="cityrep" filterControl="TextInput" filterOperation="BeginsWith"/>
+            <column headerText="Email" dataField="email" filterControl="TextInput" filterOperation="BeginsWith"/>
+            <column headerText="Actual" dataField="actual" filterControl="TextInput" filterOperation="BeginsWith"/>
+            <column headerText="Estimated" dataField="estimated" filterControl="TextInput"/>
+            <column headerText="Last Sale" dataField="lastSale" filterControl="DateComboBox"
+                    labelFunction="dataGridFormatDateLabelFunction"/>
+            <column headerText="Created" dataField="created" filterControl="DateComboBox"
+                    labelFunction="dataGridFormatDateLabelFunction"/>
+        </columns>
+        <nextLevel>
+            <level reusePreviousLevelColumns="YES"/>
+        </nextLevel>
+    </level>
+</grid>

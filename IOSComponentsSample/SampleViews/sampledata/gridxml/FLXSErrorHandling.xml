@@ -1,0 +1,22 @@
+<grid id="grid" editable="YES" enableFooters="YES">
+    <level selectedKeyField="id" onitemEditCancel="errorhandling_itemEditCancel">
+        <columns>
+            <column type="checkbox" id="cbCol"/>
+            <column dataField="id" headerText="ID" filterControl="TextInput"/>
+            <column dataField="legalName" headerText="Legal Name" editable="YES"
+                    itemEditorValidatorFunction="errorhandling_validate"/>
+            <column dataField="annualRevenue" headerText="Annual Revenue" textAlign="right" headerAlign="center"
+                    footerLabel="Avg:" footerOperation="average" footerAlign="center" footerOperationPrecision="2"
+                    footerFormatter="getCurrencyFormatter" labelFunction="dataGridFormatCurrencyLabelFunction"/>
+            <column dataField="numEmployees" headerText="Num Employees" textAlign="right" footerLabel="Avg:"
+                    footerOperation="average" footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                    labelFunction="dataGridFormatCurrencyLabelFunction"/>
+            <column dataField="earningsPerShare" headerText="EPS" textAlign="right" footerLabel="Avg:"
+                    footerOperation="average" footerFormatter="getCurrencyFormatter"
+                    labelFunction="dataGridFormatCurrencyLabelFunction"/>
+            <column dataField="lastStockPrice" headerText="Stock Price" textAlign="right" footerLabel="Avg:"
+                    footerOperation="average" footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                    labelFunction="dataGridFormatCurrencyLabelFunction"/>
+        </columns>
+    </level>
+</grid>

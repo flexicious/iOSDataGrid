@@ -1,0 +1,13 @@
+<grid id="grid" enableFilters="YES"
+      preferencePersistenceKey="exampleKey"
+      enableExport="NO"
+      forcePagerRow="NO" enablePaging="YES"
+      enableHeightAutoAdjust="YES" pageSize = "10">
+    <level>
+        <columns>
+            <column dataField="name" headerText="Name" filterControl="TextInput"/>
+            <column dataField="message" headerText="Message" filterControl="TextInput"/>
+            <column dataField="id" headerText="id" filterControl="TextInput"/>
+        </columns>
+    </level>
+</grid>

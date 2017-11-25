@@ -1,0 +1,28 @@
+<grid id="grid"
+      enableFilters="YES" enableCopy="YES" enableFooters="YES"
+      enablePaging="YES"
+      pageSize="25" footerRowHeight="70">
+    <level>
+        <columns>
+            <column type="checkbox" selectedKeyField="employeeId"/>
+            <column headerText="ID" dataField="employeeId" filterOperation="Contains" filterControl="TextInput"
+                    filterTriggerEvent="enterKeyUp"/>
+            <column headerText="Name"/>
+            <column textAlign="right" labelFunction="dataGridFormatCurrencyLabelFunction"
+                    width="200" headerText="Annual Salary" dataField="annualSalary"
+                    filterControl="NumericRangeBox" filterTriggerEvent="enterKeyUp"
+                    footerRenderer="CustomFooterRenderer_CustomFooter"/>
+            <column headerText="State" dataField="stateCode"/>
+            <column headerText="Department" dataField="department" filterOperation="Equals"
+                    filterControl="MultiSelectComboBox" filterComboBoxBuildFromGrid="YES" filterComboBoxWidth="150"/>
+            <column headerText="Phone" dataField="phoneNumber"/>
+            <column headerText="Active" dataField="isActive" filterOperation="Equals" filterControl="TriStateCheckBox"
+                    footerOperation="count" footerLabel="Count:" footerOperationPrecision="0"/>
+            <column headerText="Hire Date" dataField="hireDate" filterControl="DateComboBox"
+                    labelFunction="dataGridFormatDateLabelFunction"
+                    filterDateRangeOptions="DATE_RANGE_THIS_QUARTER,DATE_RANGE_LAST_QUARTER,DATE_RANGE_THIS_YEAR,DATE_RANGE_LAST_YEAR,DATE_RANGE_CUSTOM"
+                    filterComboBoxWidth="150" footerOperation="count" footerLabel="Count:"
+                    footerOperationPrecision="0"/>
+        </columns>
+    </level>
+</grid>

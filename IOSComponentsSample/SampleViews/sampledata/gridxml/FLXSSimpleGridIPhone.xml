@@ -1,0 +1,47 @@
+<grid id="grid" enablePrint="YES" enablePreferencePersistence="YES" forcePagerRow="YES" enablePaging="YES"
+      enableExport="YES" enableCopy="YES" preferencePersistenceKey="simpleGrid"
+       useCompactPreferences="YES"
+      horizontalScrollPolicy="auto" footerDrawTopBorder="YES"
+      enablePullToRefresh="YES"
+        >
+
+    <level selectedKeyField="id" enablePaging="NO" pageSize="50" enableFilters="YES"
+           enableFooters="YES" initialSortField="legalName" initialSortAscending="YES">
+
+        <columns>
+            <column id="colLegalName" dataField="legalName" sortCaseInsensitive="YES"
+                    headerText="Organization" width="150"
+                    headerWordWrap="YES" truncateToFit="YES"/>
+
+            <column enableCellClickRowSelect="NO" columnWidthMode="fitToContent"
+                    selectable="YES" dataField="id" headerText="ID" filterControl="TextInput"/>
+            <column dataField="headquarterAddress.line1" headerText="Address Line 1" footerLabel="Count:"
+                    footerOperation="count"/>
+            <column dataField="headquarterAddress.line2" headerText="Address Line 2"/>
+            <column dataField="headquarterAddress.city.name" headerText="City" filterControl="MultiSelectComboBox"
+                    filterComboBoxBuildFromGrid="YES" filterComboBoxWidth="150"/>
+            <column dataField="headquarterAddress.state.name" headerText="State" filterControl="MultiSelectComboBox"
+                    filterComboBoxBuildFromGrid="YES" filterComboBoxWidth="150"/>
+            <column dataField="headquarterAddress.country.name" headerText="Country" filterControl="MultiSelectComboBox"
+                    filterComboBoxBuildFromGrid="YES" filterComboBoxWidth="150"/>
+            <column dataField="annualRevenue" headerText="Annual Revenue" columnWidthMode="fitToContent"
+                    textAlign="right" headerAlign="center" footerLabel="Avg:" footerOperation="average"
+                    footerAlign="center" columnWidthModeFitToContentExcludeHeader="YES"
+                    footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                    labelFunction="dataGridFormatCurrencyLabelFunction"/>
+            <column dataField="numEmployees" headerText="Num Employees" columnWidthMode="fitToContent"
+                    columnWidthModeFitToContentExcludeHeader="YES"
+                    textAlign="right" footerLabel="Avg:" footerOperation="average" footerOperationPrecision="2"
+                    footerFormatter="getCurrencyFormatter" labelFunction="dataGridFormatCurrencyLabelFunction"/>
+            <column dataField="earningsPerShare" headerText="EPS" columnWidthMode="fitToContent"
+                    columnWidthModeFitToContentExcludeHeader="YES"
+                    textAlign="right" footerLabel="Avg:" footerOperation="average"
+                    footerFormatter="getCurrencyFormatter" labelFunction="dataGridFormatCurrencyLabelFunction"/>
+            <column dataField="lastStockPrice" headerText="Stock Price" columnWidthMode="fitToContent"
+                    columnWidthModeFitToContentExcludeHeader="YES"
+                    textAlign="right" footerLabel="Avg:" footerOperation="average" footerOperationPrecision="2"
+                    footerFormatter="getCurrencyFormatter" labelFunction="dataGridFormatCurrencyLabelFunction"/>
+        </columns>
+    </level>
+
+</grid>

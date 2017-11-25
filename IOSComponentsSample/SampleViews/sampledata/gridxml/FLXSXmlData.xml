@@ -1,0 +1,20 @@
+<grid id="grid" enablePrint="YES" enablePreferencePersistence="YES"
+      enableExport="YES" enableCopy="YES" enableFilters="YES"
+      enableFooters="YES" initialSortField="title"
+      initialSortAscending="YES" forcePagerRow="YES"
+      variableRowHeight="YES">
+    <columns>
+        <column dataField="id" headerText="ID" filterControl="TextInput" filterOperation="Contains"
+                columnWidthMode="fitToContent"/>
+        <column dataField="title" headerText="Title" filterControl="TextInput" columnWidthMode="fitToContent"
+                footerLabel="Count:" footerOperation="count" footerAlign="center" filterOperation="Contains"/>
+        <column dataField="genre" headerText="Genre" filterControl="MultiSelectComboBox"
+                filterComboBoxBuildFromGrid="YES" columnWidthMode="fitToContent"/>
+        <column dataField="price" headerText="Price" filterControl="NumericRangeBox" columnWidthMode="fixed" width="100"
+                footerLabel="Avg:" footerOperation="average" footerAlign="center" footerOperationPrecision="2"
+                footerFormatter="getCurrencyFormatter" labelFunction="dataGridFormatCurrencyLabelFunction"/>
+        <column dataField="publish_date" headerText="Publish Date" filterControl="DateComboBox"
+                columnWidthMode="fitToContent" filterConverterFunction="XMLData_convertDate"/>
+        <column dataField="description" headerText="Description" wordWrap="YES"/>
+    </columns>
+</grid>

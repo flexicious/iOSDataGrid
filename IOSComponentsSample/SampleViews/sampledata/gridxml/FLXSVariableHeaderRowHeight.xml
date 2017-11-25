@@ -1,0 +1,18 @@
+<grid id="grid" selectionMode="singleRow"
+      variableHeaderHeight="YES" variableRowHeight="YES"
+      selectedKeyField="label" doubleClickEnabled="YES"
+      itemDoubleClick="variableHeaderRowHeight_handleDoubleClick">
+    <level>
+        <columns>
+            <column type="checkbox"/>
+            <column headerText="ZZZZZ ZZZZZ ZZZZZ ZZZZZ ZZZZ ZZZZ ZZZZZ ZZZZ ZZZZ ZZZZ ZZZZ 11111" headerWordWrap="YES"
+                    dataField="label"/>
+            <column headerText="ZZZZZ ZZZZZ ZZZZZ ZZZZZ ZZZZ ZZZZ ZZZZZ ZZZZ ZZZZ ZZZZ ZZZZ 22222" headerWordWrap="YES"
+                    dataField="label"/>
+            <column headerText="ZZZZZ ZZZZZ ZZZZZ ZZZZZ ZZZZ ZZZZ ZZZZZ ZZZZ ZZZZ ZZZZ ZZZZ 33333" headerWordWrap="YES"
+                    dataField="rank"/>
+            <column headerText="ZZZZZ ZZZZZ ZZZZZ ZZZZZ ZZZZ ZZZZ ZZZZZ ZZZZ ZZZZ ZZZZ ZZZZ 44444"
+                    headerWordWrap="YES"/>
+        </columns>
+    </level>
+</grid>

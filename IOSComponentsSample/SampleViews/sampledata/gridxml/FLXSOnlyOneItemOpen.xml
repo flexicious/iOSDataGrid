@@ -1,0 +1,23 @@
+<grid id="grid"
+      enableFooters="YES" initialSortField="title"
+      initialSortAscending="YES" forcePagerRow="YES"
+      preferencePersistenceKey="onlyOneItemOpen" itemOpening="onlyOneItemOpen_itemOpeningHandler">
+    <level childrenField="Region">
+        <columns>
+
+            <column dataField="name" headerText="Region"/>
+            <column dataField="repname" headerText="Territory Rep" filterControl="TextInput"
+                    filterOperation="BeginsWith"/>
+            <column dataField="Actual" headerText="Actual" footerAlign="right" textAlign="right"/>
+            <column dataField="Estimate" headerText="Estimate" footerAlign="right" textAlign="right"/>
+        </columns>
+        <nextLevel>
+            <level reusePreviousLevelColumns="YES" childrenField="Territory_Rep" enableFooters="YES">
+                <nextLevel>
+                    <level reusePreviousLevelColumns="YES" enableFooters="YES">
+                    </level>
+                </nextLevel>
+            </level>
+        </nextLevel>
+    </level>
+</grid>

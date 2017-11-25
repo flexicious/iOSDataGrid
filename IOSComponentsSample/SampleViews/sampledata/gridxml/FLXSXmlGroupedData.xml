@@ -1,0 +1,26 @@
+<grid id="grid" enablePrint="YES" enablePreferencePersistence="YES"
+      enableExport="YES" enableCopy="YES" enableFilters="YES" enableDrillDown="YES"
+      enableFooters="YES" initialSortField="title"
+      initialSortAscending="YES" forcePagerRow="YES"
+      enableHideIfNoChildren="YES"
+      preferencePersistenceKey="xmlGroupedData">
+    <level childrenField="Region">
+        <columns>
+            <column dataField="name" headerText="Region"/>
+            <column dataField="repname" headerText="Territory Rep" filterControl="TextInput"
+                    filterOperation="BeginsWith"/>
+            <column dataField="Actual" headerText="Actual" footerAlign="right" textAlign="right"
+                    labelFunction2="XMLGroupedData_getDataValue" footerLabelFunction2="XMLGroupedData_getFooter"/>
+            <column dataField="Estimate" headerText="Estimate" footerAlign="right" textAlign="right"
+                    labelFunction2="XMLGroupedData_getDataValue" footerLabelFunction2="XMLGroupedData_getFooter"/>
+        </columns>
+        <nextLevel>
+            <level reusePreviousLevelColumns="YES" enableFooters="YES" childrenField="Territory_Rep">
+                <nextLevel>
+                    <level reusePreviousLevelColumns="YES" enableFooters="YES">
+                    </level>
+                </nextLevel>
+            </level>
+        </nextLevel>
+    </level>
+</grid>

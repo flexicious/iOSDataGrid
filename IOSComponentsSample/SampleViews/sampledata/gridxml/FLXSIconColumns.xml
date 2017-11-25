@@ -1,0 +1,34 @@
+<grid id="grid" enableFooters="YES" enableFilters="YES">
+    <level selectedKeyField="id">
+        <columns>
+            <column dataField="legalName" headerText="Legal Name" columnLockMode="left"/>
+            <column dataField="annualRevenue" headerText="Annual Revenue" textAlign="right"
+                    headerAlign="center" footerLabel="Avg:" footerOperation="average" footerAlign="center"
+                    footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                    labelFunction="dataGridFormatCurrencyLabelFunction"
+                    enableIcon="YES" icon="FLXSSampleInfo.gif" iconToolTip="This is a static tooltip" paddingRight="20"
+                    iconRight="5" iconHandCursor="YES" filterControl="TextInput"/>
+            <column dataField="numEmployees" headerText="Num Employees" textAlign="right" footerLabel="Avg:"
+                    footerOperation="average" footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                    labelFunction="dataGridFormatCurrencyLabelFunction" enableIcon="YES"
+                    icon="FLXSSampleInfo.gif" iconToolTipFunction="IconFunctions_dynamicTooltipFunction"
+                    paddingRight="20"
+                    iconRight="5" iconHandCursor="YES" filterControl="TextInput"/>
+            <column iconTooltipRenderer="IconTooltipRenderer_IconTooltipRenderer" dataField="earningsPerShare"
+                    headerText="EPS"
+                    textAlign="right" footerLabel="Avg:" footerOperation="average"
+                    footerFormatter="getCurrencyFormatter"
+                    labelFunction="dataGridFormatCurrencyLabelFunction" enableIcon="YES" iconHandCursor="YES"
+                    icon="FLXSSampleInfo.gif" iconLeft="5" filterControl="TextInput">
+            </column>
+            <column dataField="lastStockPrice" headerText="Stock Price" textAlign="right" footerLabel="Avg:"
+                    footerOperation="average" footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                    labelFunction="dataGridFormatCurrencyLabelFunction" enableIcon="YES"
+                    iconFunction="IconFunctions_dynamicIconFunction" paddingRight="20" iconRight="5"
+                    iconHandCursor="YES"/>
+            <column hideText="YES" enableIcon="YES" icon="FLXSSampleSearch.png"
+                    iconToolTip="This column shows only an icon, no text." iconHandCursor="YES"
+                    columnWidthMode="fixed" width="30" iconLeft="10"/>
+        </columns>
+    </level>
+</grid>

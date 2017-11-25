@@ -1,0 +1,49 @@
+<grid id="grid" enablePrint="YES" enablePreferencePersistence="YES"
+      enableExport="YES" enableCopy="YES" itemClick="ItemRenderers_grid_itemClickHandler"
+      selectedKeyField="id" enablePaging="YES" pageSize="50" enableFilters="YES"
+      enableFooters="YES" initialSortField="legalName" initialSortAscending="YES"
+      preferencePersistenceKey="itemRenderers">
+    <level pageSize="20" childrenField="deals" enableFooters="YES" selectedKeyField="id">
+        <columns>
+            <column dataField="id" headerText="ID" filterControl="TextInput" useUnderLine="YES" useHandCursor="YES"
+                    enableCellClickRowSelect="NO"/>
+
+            <column headerText="Editable Name" dataField="legalName"
+                    filterControl="TextInput" filterOperation="BeginsWith" paddingLeft="5" paddingBottom="5"
+                    paddingRight="8" enableCellClickRowSelect="NO" itemRenderer="FLXSTextInput">
+            </column>
+
+            <column itemRenderer="ItemRenderers_HyperLinkRenderer" headerText="Website"
+                    enableCellClickRowSelect="NO" useHandCursor="YES" useUnderLine="YES"/>
+            <column dataField="lastStockPrice" headerText="Stock Price"
+                    itemRenderer="ItemRenderers_StockChartImage">
+            </column>
+            <column sortable="NO" enableCellClickRowSelect="NO" width="50" dataField="isActive" paddingLeft="20"
+                    itemRenderer="ItemRenderers_CheckBoxRenderer"
+                    headerRenderer="ItemRenderers_CheckBoxHeaderRenderer">
+            </column>
+        </columns>
+        <nextLevel>
+            <level enableFooters="YES" selectedKeyField="id"
+                   initialSortField="dealDate" initialSortAscending="NO">
+                <columns>
+                    <column type="checkbox"/>
+                    <column dataField="dealDescription" headerText="Deal Description"
+                            footerLabel="Count:" footerOperation="count" footerAlign="center"
+                            />
+                    <column dataField="dealAmount" headerText="Deal Amount" textAlign="right"
+                            footerLabel="Total:" footerOperation="sum" footerAlign="right"
+                            footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                            labelFunction="dataGridFormatCurrencyLabelFunction"/>
+                    <column dataField="dealDate" headerText="Deal Date"
+                            labelFunction="dataGridFormatDateLabelFunction"
+                            resizable="NO"/>
+
+                    <column sortable="NO" enableCellClickRowSelect="NO" width="50" dataField="finalized"
+                            itemRenderer="ItemRenderers_CheckBoxRenderer"
+                            headerRenderer="ItemRenderers_CheckBoxHeaderRenderer"/>
+                </columns>
+            </level>
+        </nextLevel>
+    </level>
+</grid>

@@ -1,0 +1,76 @@
+<grid id="grid" enablePrint="YES" enablePreferencePersistence="YES" forcePagerRow="YES" enablePaging="YES"
+      enableExport="YES" enableCopy="YES" preferencePersistenceKey="simpleGrid"
+       useCompactPreferences="YES"
+      editable="YES"
+      horizontalScrollPolicy="auto" footerDrawTopBorder="YES"
+      enablePdf="YES"
+      placingSections="onPlacingSectionsHandler"
+      autoRefresh="autoRefreshHandler"
+      enablePullToRefresh="YES"
+        fontName="HelveticaNeue"
+        fontSize="18"
+        enableMultiColumnSort="YES"
+        >
+
+    <level selectedKeyField="id" enablePaging="NO" pageSize="50" enableFilters="YES"
+           enableFooters="YES" initialSortField="legalName" initialSortAscending="YES">
+
+        <columns>
+            <column type="checkbox"/>
+            <column id="colId" dataField="id" headerText="ID" filterControl="TextInput" filterWaterMark="Search"
+                    columnLockMode="left" columnWidthMode="fitToContent" itemEditor="FLXSNumericTextInput"
+                    enableFilterAutoComplete="YES" clearFilterOnIconClick="YES"/>
+            <column id="colLegalName" dataField="legalName" sortCaseInsensitive="YES"
+                    headerText="LegalName of the Organization"
+                    headerWordWrap="YES" truncateToFit="YES"/>
+            <columnGroup headerText="Address" enableExpandCollapse="YES">
+                <columnGroups>
+                    <columnGroup headerText="Lines">
+                        <columns>
+                            <column id="colLine1" dataField="headquarterAddress.line1" headerText="Line 1"
+                                    footerLabel="Count:" footerOperation="count"/>
+                            <column id="colLine2" dataField="headquarterAddress.line2" headerText="Line 2"/>
+                        </columns>
+                    </columnGroup>
+                    <columnGroup headerText="Region">
+                        <columns>
+                            <column id="colCity" dataField="headquarterAddress.city.name" headerText="City"
+                                    filterControl="MultiSelectComboBox" filterComboBoxWidth="150"
+                                    filterComboBoxBuildFromGrid="YES"/>
+                            <column id="colState" dataField="headquarterAddress.state.name" headerText="State"
+                                    filterControl="MultiSelectComboBox" filterComboBoxWidth="150"
+                                    filterComboBoxBuildFromGrid="YES"/>
+                            <column id="colCountry" dataField="headquarterAddress.country.name" headerText="Country"
+                                    filterControl="MultiSelectComboBox" filterComboBoxWidth="150"
+                                    filterComboBoxBuildFromGrid="YES"/>
+                        </columns>
+                    </columnGroup>
+                </columnGroups>
+            </columnGroup>
+            <columnGroup headerText="Financials">
+                <columns>
+                    <column headerAlign="right" id="colAnnRev" dataField="annualRevenue" headerText="Annual Revenue"
+                            headerWordWrap="YES" textAlign="right" footerLabel="Avg:" footerOperation="average"
+                            footerAlign="center" footerOperationPrecision="2"
+                            labelFunction="dataGridFormatCurrencyLabelFunction::"
+                            filterControl="NumericRangeBox" sortNumeric="YES" footerFormatter="getCurrencyFormatter"/>
+                    <column headerAlign="right" id="colNumEmp" headerWordWrap="YES" sortNumeric="YES"
+                            dataField="numEmployees" headerText="Num Employees" textAlign="right" footerLabel="Avg:"
+                            footerOperation="average" footerOperationPrecision="2"
+                            labelFunction="dataGridFormatCurrencyLabelFunction::"/>
+                    <column headerAlign="right" id="colEPS" headerWordWrap="YES" sortNumeric="YES"
+                            dataField="earningsPerShare" headerText="EPS"
+                            textAlign="right" footerLabel="Avg:" footerOperation="average"
+                            footerFormatter="getCurrencyFormatter"
+                            labelFunction="dataGridFormatCurrencyLabelFunction::"/>
+                    <column headerAlign="right" id="colStockPrice" headerWordWrap="YES" sortNumeric="YES"
+                            dataField="lastStockPrice" headerText="Stock Price"
+                            footerFormatter="getCurrencyFormatter" textAlign="right" footerLabel="Avg:"
+                            footerOperation="average" footerOperationPrecision="2"
+                            labelFunction="dataGridFormatCurrencyLabelFunction::"/>
+                </columns>
+            </columnGroup>
+        </columns>
+    </level>
+
+</grid>

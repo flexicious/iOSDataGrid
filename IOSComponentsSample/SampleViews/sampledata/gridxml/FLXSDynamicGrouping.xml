@@ -1,0 +1,29 @@
+<grid horizontalScrollPolicy="on" id="grid"
+      enableDynamicLevels="YES" preferencePersistenceKey="dynamicGrouping"
+      creationComplete="dynamicGrouping_CreationComplete">
+    <level childrenField="children">
+        <columns>
+            <column dataField="name" headerText="Name" columnLockMode="left"/>
+            <column dataField="invoice.deal.customer.headquarterAddress.city.name" headerText="City"/>
+            <column dataField="invoice.deal.customer.headquarterAddress.state.name" headerText="State"/>
+            <column dataField="invoice.deal.customer.headquarterAddress.country.name" headerText="Country"/>
+            <column dataField="invoice.invoiceStatus.name" headerText="Invoice Status"/>
+            <column dataField="invoice.deal.dealDescription" headerText="Deal" width="200"/>
+            <column dataField="invoice.deal.dealStatus.name" headerText="Deal Status"/>
+            <column dataField="id" headerText="ID"/>
+            <column dataField="lineItemDescription" headerText="2 Line Item Description" width="200"/>
+            <column dataField="lineItemAmount" headerText="3 Line Item Amount"/>
+            <column dataField="invoice.invoiceNumber" headerText="4 Invoice Number"/>
+            <column dataField="invoice.invoiceAmount" headerText="5 Invoice Amount"/>
+            <column dataField="invoice.invoiceDate" headerText="8 Invoice Date"/>
+            <column dataField="invoice.dueDate" headerText="9 Due Date"/>
+            <column dataField="invoice.deal.customer.legalName" headerText="12 Customer"/>
+            <column dataField="invoice.deal.customer.headquarterAddress.line1" headerText="13 Address Line 1"/>
+            <column dataField="invoice.deal.customer.headquarterAddress.line2" headerText="14 Address Line 2"/>
+            <column dataField="invoice.deal.customer.annualRevenue" headerText="18 Annual Revenue" textAlign="right"
+                    headerAlign="center"/>
+            <column dataField="invoice.deal.customer.numEmployees" headerText="19 Num Employees" textAlign="right"/>
+            <column dataField="invoice.deal.customer.earningsPerShare" headerText="20 EPS" textAlign="right"/>
+        </columns>
+    </level>
+</grid>

@@ -1,0 +1,6 @@
+<grid id="grid" enableFilters="YES">
+    <columns>
+        <column dataField="label" filterControl="TextInput" filterOperation="BeginsWith"/>
+        <column dataField="state" filterControl="MultiSelectComboBox" filterComboBoxBuildFromGrid="YES"/>
+    </columns>
+</grid>

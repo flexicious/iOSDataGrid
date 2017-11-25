@@ -1,0 +1,35 @@
+<grid id="grid" selectedKeyField="Id" filterPageSortMode="server" showSpinnerOnFilterPageSort="YES"
+      filterPageSortChange="virtualScrollTest_filterPageSortChangeHandler"
+      enableVirtualScroll="YES"
+      initialSortField="Id" virtualScroll="virtualScrollTest_virtualScrollHandler"
+      scroll="virtualScrollTest_scrollHandler"
+      enableSelectionCascade="YES"
+      enableSelectionBubble="YES"
+      enableSelectionExclusion="YES"
+      enableTriStateCheckbox="YES"
+      clearSelectionOnDataProviderChange="NO"
+      itemClick="virtualScrollTest_itemClickHandler"
+      preferencePersistenceKey="virtualScrollTest" creationComplete="virtualScrollTest_onCreationComplete">
+    <level childrenCountField="numChildren" itemLoadMode="server" enableFooters="YES" selectedKeyField="Id">
+        <columns>
+            <column type="checkbox"/>
+            <column dataField="Id" enableHierarchicalNestIndent="YES"/>
+            <column dataField="Name"/>
+            <column dataField="Street"/>
+            <column dataField="Title"/>
+            <column dataField="City"/>
+        </columns>
+        <nextLevel>
+            <level enableFooters="YES" selectedKeyField="Id">
+                <columns>
+                    <column type="checkbox"/>
+                    <column dataField="Id" enableHierarchicalNestIndent="YES"/>
+                    <column dataField="Name"/>
+                    <column dataField="Street"/>
+                    <column dataField="Title"/>
+                    <column dataField="City"/>
+                </columns>
+            </level>
+        </nextLevel>
+    </level>
+</grid>

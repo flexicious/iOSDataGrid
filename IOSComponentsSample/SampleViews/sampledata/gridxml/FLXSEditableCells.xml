@@ -1,0 +1,44 @@
+<grid enableDrag="YES" rowDisabledFunction="editableCells_getRowDisabled" editable="YES" enableFilters="YES"
+      enableFooters="YES" id="grid"
+      enableDoubleClickEdit="NO"
+
+       preferencePersistenceKey="editableCells">
+    <columns>
+        <column type="checkbox"/>
+        <column dataField="id" headerText="ID" filterControl="TextInput"
+                editable="YES" selectable="YES" truncateToFit="YES"/>
+        <column dataField="legalName" headerText="Legal Name" truncateToFit="YES" selectable="YES"
+                editable="YES"/>
+        <column dataField="headquarterAddress.line1" headerText="Address Line 1" footerLabel="Count:"
+                footerOperation="count" editable="YES"/>
+        <column dataField="headquarterAddress.line2" headerText="Address Line 2"/>
+        <column dataField="headquarterAddress.city.name" headerText="City" filterControl="MultiSelectComboBox"
+                filterComboBoxBuildFromGrid="YES" filterComboBoxWidth="150" editable="YES"/>
+        <column dataField="headquarterAddress.state.name" headerText="State"
+                filterControl="MultiSelectComboBox" filterComboBoxBuildFromGrid="YES"
+                filterComboBoxWidth="150" editable="YES"
+
+                >
+        </column>
+        <column dataField="headquarterAddress.country.name" headerText="Country" filterControl="MultiSelectComboBox"
+                filterComboBoxBuildFromGrid="YES"
+                filterComboBoxWidth="150" editable="NO"/>
+        <column dataField="addedDate" headerText="Added Date"
+                format="date"
+                editable="YES" />
+        <column dataField="annualRevenue" headerText="Annual Revenue" textAlign="right" headerAlign="center"
+                footerLabel="Avg:" footerOperation="average" footerAlign="center" footerOperationPrecision="2"
+                footerFormatter="getCurrencyFormatter"
+                labelFunction="dataGridFormatCurrencyLabelFunction" editable="YES"/>
+        <column dataField="numEmployees" headerText="Num Employees" textAlign="right" footerLabel="Avg:"
+                footerOperation="average" footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                labelFunction="dataGridFormatCurrencyLabelFunction" editable="YES"/>
+        <column dataField="earningsPerShare" headerText="EPS" textAlign="right"
+                footerLabel="Avg:" footerOperation="average" footerFormatter="getCurrencyFormatter"
+                labelFunction="dataGridFormatCurrencyLabelFunction" editable="YES"/>
+        <column dataField="lastStockPrice" headerText="Stock Price"
+                textAlign="right" footerLabel="Avg:" footerOperation="average"
+                footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                labelFunction="dataGridFormatCurrencyLabelFunction" editable="YES"/>
+    </columns>
+</grid>

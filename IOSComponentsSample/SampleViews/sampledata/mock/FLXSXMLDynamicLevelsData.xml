@@ -1,0 +1,32 @@
+<Region name="Southwest" id="SW">
+    <Region name="Arizona" Actual="68750" Estimate="70000" id="AR">
+        <Territory_Rep name="Barbara Jennings"
+                       Actual="38865" Estimate="40000" id="BJ"/>
+        <Territory_Rep name="Dana Binn"
+                       Actual="29885" Estimate="30000" id="DB"/>
+    </Region>
+    <Region name="Central California" Actual="29134" Estimate="30000" id="CC">
+        <Territory_Rep name="Joe Smith"
+                       Actual="29134" Estimate="30000" id="JS"/>
+        <Territory_Rep name="Bethany Smith"
+                       Actual="29134" Estimate="30000" id="BS"/>
+    </Region>
+    <Region name="Nevada" Actual="52888" Estimate="45000" id="NV">
+        <Territory_Rep name="Bethany Pittman"
+                       Actual="52888" Estimate="45000" id="BP"/>
+        <Territory_Rep name="Lauren Pittman"
+                       Actual="52888" Estimate="45000" id="LP"/>
+    </Region>
+    <Region name="Northern California" Actual="94303" Estimate="80000" id="NC">
+        <Territory_Rep name="Lauren Ipsum"
+                       Actual="38805" Estimate="40000" id="LI"/>
+        <Territory_Rep name="T.R. Smith"
+                       Actual="55498" Estimate="40000" id="TS"/>
+    </Region>
+    <Region name="Southern California" Actual="89898" Estimate="90000" id="SC">
+        <Territory_Rep name="Alice Treu"
+                       Actual="44985" Estimate="45000" id="AT"/>
+        <Territory_Rep name="Jane Grove"
+                       Actual="44913" Estimate="45000" id="JG"/>
+    </Region>
+</Region>

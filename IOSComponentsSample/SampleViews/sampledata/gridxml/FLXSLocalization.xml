@@ -1,0 +1,27 @@
+<grid forcePagerRow="YES" enableExport="YES"
+      id="grid"
+      enableDrillDown="YES"
+      enableFilters="YES" enablePaging="YES"
+      enablePreferencePersistence="YES" enablePrint="YES"
+      preferencePersistenceKey="localization"
+      creationComplete="localization_creationCompleteHandler"
+      >
+    <level>
+        <columns>
+            <column type="checkbox" selectedKeyField="employeeId"/>
+            <column headerText="ID" dataField="employeeId" filterOperation="Contains" filterControl="TextInput"
+                    filterTriggerEvent="enterKeyUp"/>
+            <column headerText="Nom" labelFunction="CustomMatchFilterControl_getFullName"/>
+            <column textAlign="right"
+                    labelFunction="dataGridFormatCurrencyLabelFunction"
+                    width="100" headerText="Salaire annuel" dataField="annualSalary"
+                    filterControl="NumericRangeBox" filterTriggerEvent="enterKeyUp"/>
+            <column headerText="Etat" dataField="stateCode"/>
+            <column headerText="Département" dataField="department" filterOperation="Equals"
+                    filterControl="MultiSelectComboBox" filterComboBoxBuildFromGrid="YES" filterComboBoxWidth="150"/>
+            <column headerText="Téléphone" dataField="phoneNumber"/>
+            <column headerText="Actif" dataField="isActive" filterOperation="Equals" filterControl="TriStateCheckBox"
+                    footerOperation="count" footerLabel="Count:" footerOperationPrecision="0"/>
+        </columns>
+    </level>
+</grid>

@@ -1,0 +1,111 @@
+<grid id="grid" enablePrint="YES"
+      enablePreferencePersistence="YES" enableExport="YES" enableCopy="YES"
+      preferencePersistenceKey="fullyLazyLoaded" creationComplete="fullyLazyLoaded_CreationComplete"
+      printExportDataRequest="fullyLazyLoaded_grid_printExportDataRequestHandler"
+      showSpinnerOnFilterPageSort="YES" enableSelectionCascade="YES"
+      enableSelectionBubble="YES" enableSelectionExclusion="YES"
+      showSpinnerOnCreationComplete="YES"
+      enableTriStateCheckbox="YES" enableEagerDraw="YES"
+      enablePullToRefresh="YES"
+
+      enableDefaultDisclosureIcon="NO"
+        >
+    <level enableFilters="YES" enablePaging="YES" pageSize="10" childrenField="deals" enableFooters="YES"
+           selectedKeyField="id" itemLoadMode="server"
+           itemLoad="fullyLazyLoaded_flexdatagridcolumnlevel1_itemLoadHandler"
+           filterPageSortChange="fullyLazyLoaded_flexdatagridcolumnlevel1_filterPageSortChangeHandler"
+           filterPageSortMode="server">
+        <columns>
+            <column id="colLegalName" selectable="YES" enableExpandCollapseIcon="YES"
+                    editable="YES" enableCellClickRowSelect="NO" truncateToFit="YES" useUnderLine="YES"
+                    useHandCursor="YES"
+                    filterControl="TextInput" headerWordWrap="YES" filterWaterMark="Search" paddingLeft="38"
+                    clearFilterOnIconClick="YES" width="150"
+                    showClearIconWhenHasText="YES" dataField="legalName" headerText="Legal Name of the Organization"/>
+            <column enableCellClickRowSelect="NO" columnWidthMode="fitToContent" selectable="YES" dataField="id"
+                    headerText="ID" filterControl="TextInput"/>
+            <column dataField="headquarterAddress.line1" headerText="Address Line 1" footerLabel="Count:"
+                    footerOperation="count"/>
+            <column dataField="headquarterAddress.line2" headerText="Address Line 2"/>
+            <column dataField="headquarterAddress.city.name" headerText="City" filterControl="MultiSelectComboBox"
+                    filterComboBoxBuildFromGrid="YES" filterComboBoxWidth="150"/>
+            <column dataField="headquarterAddress.state.name" headerText="State" filterControl="MultiSelectComboBox"
+                    filterComboBoxBuildFromGrid="YES" filterComboBoxWidth="150"/>
+            <column dataField="headquarterAddress.country.name" headerText="Country" filterControl="MultiSelectComboBox"
+                    filterComboBoxBuildFromGrid="YES" filterComboBoxWidth="150"/>
+            <column dataField="annualRevenue" headerText="Annual Revenue" columnWidthMode="fitToContent"
+                    textAlign="right" headerAlign="center" footerLabel="Avg:" footerOperation="average"
+                    footerAlign="center" columnWidthModeFitToContentExcludeHeader="YES" footerOperationPrecision="2"
+                    footerFormatter="getCurrencyFormatter" labelFunction="dataGridFormatCurrencyLabelFunction"/>
+            <column dataField="numEmployees" headerText="Num Employees" columnWidthMode="fitToContent"
+                    columnWidthModeFitToContentExcludeHeader="YES" textAlign="right" footerLabel="Avg:"
+                    footerOperation="average" footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                    labelFunction="dataGridFormatCurrencyLabelFunction"/>
+            <column dataField="earningsPerShare" headerText="EPS" columnWidthMode="fitToContent"
+                    columnWidthModeFitToContentExcludeHeader="YES" textAlign="right" footerLabel="Avg:"
+                    footerOperation="average" footerFormatter="getCurrencyFormatter"
+                    labelFunction="dataGridFormatCurrencyLabelFunction"/>
+            <column dataField="lastStockPrice" headerText="Stock Price" columnWidthMode="fitToContent"
+                    columnWidthModeFitToContentExcludeHeader="YES" textAlign="right" footerLabel="Avg:"
+                    footerOperation="average" footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                    labelFunction="dataGridFormatCurrencyLabelFunction"/>
+        </columns>
+        <nextLevel>
+            <level childrenField="invoices" enableFooters="YES" selectedKeyField="id" itemLoadMode="server"
+                   itemLoad="fullyLazyLoaded_flexdatagridcolumnlevel2_itemLoadHandler"
+                   filterPageSortMode="server"
+                   filterPageSortChange="fullyLazyLoaded_flexdatagridcolumnlevel2_filterPageSortChangeHandler">
+                <columns>
+                    <column width="150" dataField="dealDescription" headerText="Deal Description" paddingLeft="40"
+                            enableExpandCollapseIcon="YES" enableCellClickRowSelect="NO" expandCollapseIconLeft="5"
+                            footerLabel="Count:" footerOperation="count" footerAlign="center"
+                            />
+                    <column editable="YES" dataField="dealAmount" headerText="Deal Amount" textAlign="right"
+                            footerAlign="right" labelFunction="dataGridFormatCurrencyLabelFunction"
+                            footerLabelFunction2="fullyLazyLoaded_getFooterLabel"/>
+                    <column itemEditor="DatePicker" editable="YES" editorDataField="selectedDate" dataField="dealDate"
+                            headerText="Deal Date" labelFunction="dataGridFormatDateLabelFunction"/>
+                </columns>
+                <nextLevel>
+                    <level childrenField="lineItems" enableFooters="YES"
+                           selectedKeyField="id" itemLoadMode="server"
+                           itemLoad="fullyLazyLoaded_flexdatagridcolumnlevel3_itemLoadHandler"
+                           filterPageSortMode="server"
+                           filterPageSortChange="fullyLazyLoaded_flexdatagridcolumnlevel3_filterPageSortChangeHandler">
+                        <columns>
+                            <column width="150" dataField="id" headerText="Invoice Number"
+                                    footerLabel="Count:" footerOperation="count" footerAlign="center"
+                                    expandCollapseIconLeft="10" footerLabelFunction2="fullyLazyLoaded_getFooterLabel"
+                                    paddingLeft="45" enableExpandCollapseIcon="YES" enableCellClickRowSelect="NO"/>
+                            <column editable="YES" dataField="invoiceAmount" headerText="Invoice Amount"
+                                    textAlign="right" footerAlign="right"
+                                    footerLabelFunction2="fullyLazyLoaded_getFooterLabel"
+                                    labelFunction="dataGridFormatCurrencyLabelFunction"/>
+                            <column editable="YES" dataField="invoiceStatus.name" headerText="Invoice Status"/>
+                            <column itemEditor="DatePicker" editable="YES" editorDataField="selectedDate"
+                                    dataField="invoiceDate" headerText="Invoice Date"
+                                    labelFunction="dataGridFormatDateLabelFunction"/>
+                            <column itemEditor="DatePicker" editable="YES" editorDataField="selectedDate"
+                                    dataField="dueDate" headerText="Due Date"
+                                    labelFunction="dataGridFormatDateLabelFunction"/>
+                        </columns>
+                        <nextLevel>
+                            <level enableFooters="YES" selectedKeyField="id"
+                                   filterPageSortMode="server"
+                                   filterPageSortChange="fullyLazyLoaded_flexdatagridcolumnlevel4_filterPageSortChangeHandler">
+                                <columns>
+                                    <column editable="YES" dataField="lineItemAmount" headerText="Line Item Amount"
+                                            textAlign="right" footerLabelFunction2="fullyLazyLoaded_getFooterLabel"
+                                            footerAlign="right" labelFunction="dataGridFormatCurrencyLabelFunction"/>
+                                    <column editable="YES" dataField="lineItemDescription"
+                                            headerText="Line Item Description"
+                                            footerLabelFunction2="fullyLazyLoaded_getFooterLabel" footerAlign="center"/>
+                                </columns>
+                            </level>
+                        </nextLevel>
+                    </level>
+                </nextLevel>
+            </level>
+        </nextLevel>
+    </level>
+</grid>

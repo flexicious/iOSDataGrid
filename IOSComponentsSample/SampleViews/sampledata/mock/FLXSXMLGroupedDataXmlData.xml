@@ -1,0 +1,55 @@
+<Regions>
+    <Region name="Southwest">
+        <Region name="Arizona">
+            <Territory_Rep repname="Barbara Jennings"
+                           Actual="38865" Estimate="40000"/>
+            <Territory_Rep repname="Dana Binn"
+                           Actual="29885" Estimate="30000"/>
+        </Region>
+        <Region name="Central California">
+            <Territory_Rep repname="Joe Smith"
+                           Actual="29134" Estimate="30000"/>
+            <Territory_Rep repname="Jon Smith"
+                           Actual="22324" Estimate="30000"/>
+        </Region>
+        <Region name="Nevada">
+            <Territory_Rep repname="Bethany Pittman"
+                           Actual="52888" Estimate="45000"/>
+            <Territory_Rep repname="Nattie Smith"
+                           Actual="32333" Estimate="45000"/>
+        </Region>
+        <Region name="Northern California">
+            <Territory_Rep repname="Lauren Ipsum"
+                           Actual="38805" Estimate="40000"/>
+            <Territory_Rep repname="T.R. Smith"
+                           Actual="55498" Estimate="40000"/>
+        </Region>
+        <Region name="Southern California">
+            <Territory_Rep repname="Alice Treu"
+                           Actual="44985" Estimate="45000"/>
+            <Territory_Rep repname="Jane Grove"
+                           Actual="44913" Estimate="45000"/>
+        </Region>
+    </Region>
+    <Region name="Northeast">
+        <Region name="New York">
+            <Territory_Rep repname="Alex Smith"
+                           Actual="49229" Estimate="50000"/>
+            <Territory_Rep repname="Joe Pittman"
+                           Actual="35555" Estimate="40000"/>
+        </Region>
+        <Region name="New Jersey">
+            <Territory_Rep repname="Joe Smith"
+                           Actual="28394" Estimate="30000"/>
+            <Territory_Rep repname="Jason Bourne"
+                           Actual="33212" Estimate="30000"/>
+        </Region>
+
+        <Region name="Connecticut">
+            <Territory_Rep repname="Amanda Peters"
+                           Actual="44331" Estimate="55000"/>
+            <Territory_Rep repname="Jake Fremmer"
+                           Actual="55434" Estimate="65000"/>
+        </Region>
+    </Region>
+</Regions>

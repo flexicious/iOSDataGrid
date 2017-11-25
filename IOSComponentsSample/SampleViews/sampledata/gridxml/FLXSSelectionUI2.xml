@@ -1,0 +1,28 @@
+<grid variableRowHeight="YES" editable="YES" id="grid"
+      disabledField="disabled" enableSelectionCascade="YES" enableFilters="YES"
+      enableAutoRefresh="YES" maxAutoAdjustHeight="300" enableDrag="YES"
+      headerVerticalGridLineThickness="0" lockedSeperatorThickness="0"
+      enableDynamicLevels="YES" forcePagerRow="YES"
+      preferencePersistenceKey="selectedUI2"
+      enableDefaultDisclosureIcon="NO" filterExcludeObjectsWithoutMatchField="YES">
+    <level childrenField="items" hierarchicalNestIndent="25">
+        <columns>
+            <column type="checkbox" width="300" filterPaddingLeft="20" headerPaddingLeft="20" excludeFromSettings="NO"
+                    enableLabelAndCheckBox="YES" headerText="Name" paddingRight="15" paddingLeft="40" paddingTop="10"
+                    enableRecursiveSearch="YES"
+                    dataField="groupName" filterControl="TextInput" sortCaseInsensitive="YES"
+                    filterOperation="BeginsWith"
+                    enableHierarchicalNestIndent="YES" enableExpandCollapseIcon="YES" enableQuickView="YES"
+                    showIconOnRowHover="YES" editable="NO"/>
+            <column headerText="Description" width="300" dataField="description" wordWrap="YES" enableQuickView="YES"
+                    paddingRight="10" filterControl="TextInput" filterOperation="BeginsWith" showIconOnCellHover="YES"
+                    enableRecursiveSearch="YES"/>
+            <column headerText="Type" dataField="family" enableObjectSelectorItemEditor="YES" filterControl="TextInput"
+                    filterOperation="BeginsWith" enableRecursiveSearch="YES"/>
+            <column headerText="IP Address" dataField="address" filterControl="TextInput" filterOperation="EndsWith"
+                    editorStyleName="editableTextInput" editable="YES" enableRecursiveSearch="YES"/>
+            <column headerText="Vendor" dataField="vendor" filterControl="TextInput" filterOperation="BeginsWith"
+                    enableRecursiveSearch="YES"/>
+        </columns>
+    </level>
+</grid>

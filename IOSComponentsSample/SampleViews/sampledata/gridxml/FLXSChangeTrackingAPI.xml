@@ -1,0 +1,50 @@
+<grid editable="YES" forcePagerRow="YES" enableFilters="YES"  builtInActions="sort,separator"
+      id="dgMain" styleName="FlexiciousGridStyle" enableSelectionCascade="YES" enableSelectionBubble="YES"
+      enableTriStateCheckbox="YES" showSpinnerOnFilterPageSort="YES" enableDefaultDisclosureIcon="NO"
+      preferencePersistenceKey="changeTrackingAPI"
+      rowChanged="changeTrackingAPI_onRowChanged"
+      cellBackgroundColorFunction="changeTrackingAPI_getCellBackgroundColor"
+      enableTrackChanges="YES">
+    <level childrenField="items" enableFilters="NO">
+        <columns>
+            <column sortable="NO" headerText="" excludeFromSettings="YES" enableExpandCollapseIcon="YES" width="25"
+                    columnWidthMode="fixed" editable="NO"/>
+            <column type="checkbox"/>
+            <column headerText="Employee Name" dataField="employeeName" filterControl="TextInput"
+                    filterOperation="BeginsWith"/>
+            <column headerText="Title" dataField="title" filterControl="TextInput" filterOperation="BeginsWith"/>
+            <column headerText="Email Address" dataField="emailAddress" filterControl="TextInput"
+                    filterOperation="BeginsWith"/>
+            <column headerText="Department" dataField="department" filterControl="TextInput"
+                    filterOperation="BeginsWith"/>
+            <column headerText="Hire Date" dataField="hireDate" filterControl="TextInput" filterOperation="BeginsWith"/>
+        </columns>
+        <nextLevel>
+            <level reusePreviousLevelColumns="NO" childrenField="items" headerVerticalGridLineThickness="1">
+                <columns>
+                    <column sortable="NO" headerText="" editable="NO" excludeFromSettings="YES"
+                            enableExpandCollapseIcon="YES" width="50" columnWidthMode="fixed"
+                            expandCollapseIconLeft="25"/>
+                    <column type="checkbox"/>
+                    <column dataField="project" headerText="Project"/>
+                    <column dataField="roleOnProject" headerText="Role On Project"/>
+                    <column dataField="projectStartDate" headerText="Project Start"/>
+                    <column dataField="projectEndDate" headerText="Project End"/>
+                </columns>
+                <nextLevel>
+                    <level reusePreviousLevelColumns="NO" childrenField="items" headerVerticalGridLineThickness="1">
+                        <columns>
+                            <column sortable="NO" headerText="" editable="NO" excludeFromSettings="YES" width="75"
+                                    columnWidthMode="fixed"/>
+                            <column type="checkbox"/>
+                            <column dataField="timeSheetTitle" headerText="TimeSheet Title"/>
+                            <column dataField="hours" headerText="Hours"/>
+                            <column dataField="rate" headerText="Rate"/>
+                            <column dataField="totalExpense" headerText="Total Expense"/>
+                        </columns>
+                    </level>
+                </nextLevel>
+            </level>
+        </nextLevel>
+    </level>
+</grid>

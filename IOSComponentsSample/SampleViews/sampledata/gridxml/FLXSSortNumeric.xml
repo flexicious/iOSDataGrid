@@ -1,0 +1,7 @@
+<grid editable="YES">
+    <columns>
+        <column dataField="label"/>
+        <column dataField="state"/>
+        <column dataField="rank" sortNumeric="YES"/>
+    </columns>
+</grid>

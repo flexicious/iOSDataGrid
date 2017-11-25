@@ -1,0 +1,18 @@
+[ { "id": "3190","disabled":false, "groupName": "United States", "description": "United States", "parentId": 0,
+    "hasChildren": true, "isStatic": false, "type": "Customer", "iconClass": "Customer",
+    "items": [
+        { "id": "31469", "disabled":false,"groupName": "San Jose", "description": "null", "parentId": 3190, "hasChildren": true, "isStatic": false, "type": "Site", "iconClass": "Site",
+            "items": [] }
+        , { "id": "31470", "groupName": "Chicago","disabled":false, "description": "null", "parentId": 3190, "hasChildren": true, "isStatic": false, "type": "Site", "iconClass": "Site",
+            "items": [ { "id": "3144141", "groupName": "ohr-rtc-1","disabled":true, "description": "ohr-rtc-1 this is a really long description and should cause truncation", "parentId": 31470, "hasChildren": false,
+                "isStatic": true, "address": "10.125.154.2", "type": "router", "iconClass": "router", "vendorName": "Flexicious", "items": [] },
+                { "id": "3144142", "groupName": "ohr-device-1","disabled":true, "description": "ohr-device-1", "parentId": 31470, "hasChildren": false,
+                    "isStatic": true, "address": "10.125.104.2", "type": "switch", "iconClass": "switch", "vendorName": "Flexicious", "items": [] },
+                { "id": "3144143", "groupName": "ohr-device-2", "description": "ohr-device-2","disabled":true, "parentId": 31470, "hasChildren": false,
+                    "isStatic": true, "address": "10.101.103.3", "type": "switch", "iconClass": "switch", "vendorName": "Flexicious", "items": [] },
+                { "id": "3144144", "groupName": "ohr-device-3", "description": "ohr-device-3","disabled":true, "parentId": 31470, "hasChildren": false,
+                    "isStatic": true, "address": "10.121.105.3", "type": "switch", "iconClass": "switch", "vendorName": "Flexicious", "items": [] } ] },
+        { "id": "31471", "groupName": "Denver","disabled":false, "description": "null", "parentId": 3190, "hasChildren": true, "isStatic": false,
+            "type": "Site", "iconClass": "Site", "items": [] } ] }, { "id": "3191", "groupName": "Canada", "description": "Canada"
+    ,"disabled":false, "parentId": 0, "hasChildren": true, "isStatic": false, "type": "Customer", "iconClass": "Customer", "items": [] }
+]

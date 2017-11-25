@@ -1,0 +1,31 @@
+<grid id="grid" enablePrint="YES"
+      enableEagerDraw="YES" showSpinnerOnCreationComplete="YES"
+      enablePreferencePersistence="YES"
+      styleName="gridStyle"
+      enableDrillDown="YES"
+      preferencePersistenceKey="outlookGroupedData" creationComplete="outlookGroupedData_CreationComplete"
+      rendererInitialized="outlookGroupedData_gridrendererInitializedHandler"
+      beforePrint="outlookGroupedData_gridbeforePrintHandler"
+      enableExport="YES" enableCopy="YES">
+    <level enablePaging="YES" pageSize="20" childrenField="deals" selectedKeyField="id" horizontalGridLineThickness="2"
+           headerPaddingTop="5" reusePreviousLevelColumns="YES" rowHeight="35"
+           rowTextColorFunction="outlookGroupedData_getBlueColor" enableFilters="YES" initialSortField="legalName">
+        <columns>
+            <column dataField="legalName" headerText="Organization Name" filterControl="TextInput"
+                    filterOperation="BeginsWith"/>
+            <column dataField="dealDescription" headerText="Deal Description"/>
+            <column dataField="dealStatus.name" headerText="Deal Status" footerLabel="Count:" footerOperation="count"
+                    footerAlign="center"/>
+            <column dataField="dealAmount" headerText="Amount" textAlign="right" footerLabel="Total:"
+                    footerOperation="sum" footerAlign="right" footerOperationPrecision="2"
+                    footerFormatter="getCurrencyFormatter" labelFunction="outlookGroupedData_getInvoiceAmount"
+                    sortCompareFunction="outlookGroupedData_amountSortCompareFunction"/>
+            <column dataField="dealDate" headerText="Deal Date" labelFunction="dataGridFormatDateLabelFunction"/>
+        </columns>
+        <nextLevel>
+            <level selectedKeyField="id" reusePreviousLevelColumns="YES" rowHeight="25"
+                   horizontalGridLineColor="0xEDEDED" footerRowHeight="25" horizontalGridLineThickness="1"
+                   paddingTop="2" enableFooters="YES" initialSortField="dealDate" initialSortAscending="NO"/>
+        </nextLevel>
+    </level>
+</grid>

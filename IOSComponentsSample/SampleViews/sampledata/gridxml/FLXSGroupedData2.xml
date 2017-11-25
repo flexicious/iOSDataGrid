@@ -1,0 +1,58 @@
+<grid id="grid" enablePrint="YES" horizontalGridLines="YES"
+      enablePreferencePersistence="YES" enableFilters="YES" enableDefaultDisclosureIcon="NO" enableMultiColumnSort="YES"
+      enableExport="YES" enableCopy="YES" enableEagerDraw="YES" showSpinnerOnFilterPageSort="YES"
+      showSpinnerOnCreationComplete="YES"
+      preferencePersistenceKey="groupedData2" creationComplete="groupedData2_CreationComplete"
+      itemEditEnd="groupedData2_itemEditEnd"
+      
+      nestIndent="5"
+      enableFooters="YES" 
+      editable="YES"
+      cellEditableFunction="isCellEditable:">
+    <level enableFilters="YES" enablePaging="YES" pageSize="20" childrenField="deals" selectedKeyField="id"
+           nestIndent="5"
+           reusePreviousLevelColumns="YES" rowSelectableFunction="groupedData2_returnFalse"
+           itemLoadMode="server" itemLoad="partialLazyLoaded_flexdatagridcolumnlevel1_itemLoadHandler">
+        <columns>
+            <column  enableHierarchicalNestIndent="YES"
+                    dataField="legalName" headerText="Name" width="250" enableExpandCollapseIcon="YES" paddingTop="10"
+                    paddingLeft="35" filterControl="TextInput"
+                    />
+                    <column enableHierarchicalNestIndent="YES"
+
+                    dataField="dealDescription" headerText="Project"
+                    filterControl="TextInput"
+/>
+        <column  enableHierarchicalNestIndent="YES"
+                     dataField="invoiceNumberString" headerText="Invoice Number"
+                     filterControl="TextInput"
+ />
+            <column dataField="invoiceAmount" headerText="Amount" textAlign="right"
+                    footerLabel="Total:" footerOperation="sum" footerAlign="right"
+                    footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                    labelFunction="groupedData2_getInvoiceAmount"
+                    editable="YES"
+                    footerLabelFunction="groupedData2_footerLabelFunction"
+                    sortCompareFunction="groupedData2_amountSortCompareFunction"/>
+
+            <column dataField="invoiceStatus.name" headerText="Invoice Status" filterControl="MultiSelectComboBox"
+                    filterComboBoxDataProvider="performSelectorOnGridDelegate__getInvoiceStatuses"
+                    enableRecursiveSearch="YES"
+                    filterComboBoxDataField="code" filterComboBoxLabelField="name"/>
+            <column dataField="invoiceDate" headerText="Invoice Date" filterControl="DateComboBox"
+                    labelFunction="dataGridFormatDateLabelFunction"/>
+            <column dataField="dueDate" headerText="Due Date" filterControl="DateComboBox"
+                    labelFunction="dataGridFormatDateLabelFunction"/>
+        </columns>
+        <nextLevel>
+            <level childrenField="invoices" selectedKeyField="id" reusePreviousLevelColumns="YES"
+                   nestIndent="5" rowSelectableFunction="groupedData2_returnFalse">
+                <nextLevel>
+                    <level enableFooters="YES" enablePaging="YES" pageSize="5" selectedKeyField="id"
+                           nestIndent="5" reusePreviousLevelColumns="YES">
+                    </level>
+                </nextLevel>
+            </level>
+        </nextLevel>
+    </level>
+</grid>

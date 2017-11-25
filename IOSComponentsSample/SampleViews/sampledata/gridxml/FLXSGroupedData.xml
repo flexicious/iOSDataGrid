@@ -1,0 +1,51 @@
+<grid id="grid" enablePrint="YES" horizontalGridLines="YES"
+      enablePreferencePersistence="YES" enableFilters="YES"
+      enableExport="YES" enableCopy="YES" enableEagerDraw="YES" showSpinnerOnFilterPageSort="YES"
+      preferencePersistenceKey="groupedData" creationComplete="vbox1_creationCompleteHandler"
+       enableSelectionCascade="YES">
+
+    <level enableFilters="YES" enablePaging="YES" pageSize="20" childrenField="deals" selectedKeyField="id"
+           reusePreviousLevelColumns="YES">
+        <columns>
+            <column type="checkbox"/>
+            <column dataField="legalName" headerText="Organization Name"
+                    filterControl="TextInput" filterOperation="BeginsWith"
+                    />
+            <column dataField="dealDescription" headerText="Deal Description"
+                    filterControl="TextInput" filterOperation="BeginsWith"
+                    />
+            <column dataField="invoiceNumber" headerText="Invoice Number"
+                    footerLabel="Count:" footerOperation="count" footerAlign="center"
+                    filterControl="TextInput" filterOperation="BeginsWith"
+                    />
+            <column dataField="invoiceAmount" headerText="Amount" textAlign="right"
+                    footerLabel="Total:" footerOperation="sum" footerAlign="right"
+                    footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                    labelFunction="groupedData_getInvoiceAmount"
+                    sortCompareFunction="groupedData_amountSortCompareFunction"/>
+            <column dataField="invoiceStatus.name" headerText="Invoice Status" filterControl="MultiSelectComboBox"
+                    filterComboBoxDataProvider="performSelectorOnGridDelegate__getInvoiceStatuses"
+                    enableRecursiveSearch="YES"
+                    filterComboBoxDataField="code" filterComboBoxLabelField="name"/>
+
+            <column itemEditor="DatePicker"
+                    dataField="invoiceDate" headerText="Invoice Date" filterControl="DateComboBox"
+                    labelFunction="dataGridFormatDateLabelFunction"/>
+            <column itemEditor="DatePicker"
+                    dataField="dueDate" headerText="Due Date" filterControl="DateComboBox"
+                    labelFunction="dataGridFormatDateLabelFunction"/>
+        </columns>
+        <nextLevel>
+            <level childrenField="invoices" selectedKeyField="id" reusePreviousLevelColumns="YES">
+
+                <nextLevel>
+                    <level enableFooters="YES" enablePaging="YES" pageSize="5"
+                           selectedKeyField="id" reusePreviousLevelColumns="YES">
+
+                    </level>
+                </nextLevel>
+            </level>
+        </nextLevel>
+    </level>
+
+</grid>

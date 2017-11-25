@@ -1,0 +1,5 @@
+[{"label":"Company A", "state":"NJ", "rank":"1"},
+ {"label":"Company B", "state":"PA", "rank":"11"},
+ {"label":"Company C", "state":"CT", "rank":"111"},
+ {"label":"Company D", "state":"NY", "rank":"2"},
+ {"label":"Company E", "state":"NJ", "rank":"22"}]

@@ -1,0 +1,142 @@
+<grid id="grid" enablePrint="YES"
+      enablePreferencePersistence="YES" enableDrillDown="YES"
+      enableExport="YES" enableCopy="YES" enableSelectionCascade="YES" enableSelectionBubble="YES"
+      enableTriStateCheckbox="YES"
+      preferencePersistenceKey="nesteddata"
+      itemDoubleClick="nested_grid_itemDoubleClickHandler"
+      itemClick="nested_grid_ClickHandler"
+      autoRefresh="autoRefreshHandler"
+      enablePullToRefresh="YES"
+      doubleClickEnabled="YES"
+      showSpinnerOnCreationComplete="NO"
+      horizontalScrollPolicy="auto"
+      enableDefaultDisclosureIcon="NO">
+
+    <level enableFilters="YES" enablePaging="YES" initialSortField="legalName"
+           pageSize="20" childrenField="deals" enableFooters="YES" selectedKeyField="id"
+            >
+
+        <columns>
+            <column id="colLegalName" selectable="YES" enableExpandCollapseIcon="YES"
+                    editable="YES" enableCellClickRowSelect="NO" truncateToFit="YES" useUnderLine="YES"
+                    useHandCursor="YES"
+                    filterControl="TextInput" headerWordWrap="YES" filterWaterMark="Search" paddingLeft="38"
+                    clearFilterOnIconClick="YES" width="150"
+                    showClearIconWhenHasText="YES" dataField="legalName" headerText="Legal Name of the Organization"/>
+
+            <column type="checkbox"/>
+            <column editable="YES" itemEditorApplyOnValueCommit="YES"
+                    id="date" itemEditor="DatePicker" dataField="addedDate" headerText="Date Added"
+                    filterControl="DateComboBox" labelFunction="dataGridFormatDateLabelFunction"
+                    filterDateRangeOptions="DATE_RANGE_THIS_QUARTER,DATE_RANGE_LAST_QUARTER,DATE_RANGE_THIS_YEAR,DATE_RANGE_LAST_YEAR,DATE_RANGE_CUSTOM"/>
+            <column editable="YES"
+                    id="colId" dataField="id" headerText="ID" filterControl="TextInput"/>
+            <columnGroup headerText="Address">
+                <columnGroups>
+                    <columnGroup headerText="Lines">
+                        <columns>
+                            <column enableCellClickRowSelect="NO" id="colLine1" dataField="headquarterAddress.line1"
+                                    headerText="Line 1" footerLabel="Count:" footerOperation="count"/>
+                            <column enableCellClickRowSelect="NO" id="colLine2" dataField="headquarterAddress.line2"
+                                    headerText="Line 2"/>
+                        </columns>
+                    </columnGroup>
+                    <columnGroup headerText="Region">
+                        <columns>
+                            <column id="colCity" dataField="headquarterAddress.city.name" headerText="City"
+                                    filterControl="ComboBox" filterComboBoxBuildFromGrid="YES"
+                                    filterComboBoxWidth="150"/>
+                            <column id="colState" editable="YES" itemEditor="ComboBox"
+                                    itemEditorApplyOnValueCommit="YES" useFilterDataProviderForItemEditor="YES"
+                                    dataField="headquarterAddress.state.name" headerText="State"
+                                    filterControl="MultiSelectComboBox" filterComboBoxBuildFromGrid="YES"
+                                    filterComboBoxWidth="150"/>
+                            <column id="colCountry" dataField="headquarterAddress.country.name" headerText="Country"
+                                    filterControl="MultiSelectComboBox" filterComboBoxBuildFromGrid="YES"
+                                    filterComboBoxWidth="150"/>
+                        </columns>
+                    </columnGroup>
+                </columnGroups>
+            </columnGroup>
+            <columnGroup headerText="Financials">
+                <columns>
+                    <column id="colAnnRev" editable="YES" dataField="annualRevenue" headerText="Annual Revenue"
+                            textAlign="right" headerAlign="center" footerLabel="Avg:" footerOperation="average"
+                            footerAlign="center" footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                            labelFunction="dataGridFormatCurrencyLabelFunction"/>
+                    <column id="colNumEmp" editable="YES" dataField="numEmployees" headerText="Num Employees"
+                            textAlign="right" footerLabel="Avg:" footerOperation="average" footerOperationPrecision="2"
+                            footerFormatter="getCurrencyFormatter" labelFunction="dataGridFormatCurrencyLabelFunction"/>
+                    <column id="colEPS" editable="YES" dataField="earningsPerShare" headerText="EPS" textAlign="right"
+                            footerLabel="Avg:" footerOperation="average" footerFormatter="getCurrencyFormatter"
+                            labelFunction="dataGridFormatCurrencyLabelFunction"/>
+                    <column id="colStockPrice" editable="YES" dataField="lastStockPrice" headerText="Stock Price"
+                            textAlign="right" footerLabel="Avg:" footerOperation="average" footerOperationPrecision="2"
+                            footerFormatter="getCurrencyFormatter" labelFunction="dataGridFormatCurrencyLabelFunction"/>
+                    <column id="colDelete" columnWidthMode="fixed" width="25" headerText=" " iconLeft="6" iconTop="4"
+                            enableIcon="YES" headerIcon=" IMAGE_PATH /search_clear.png"
+                            icon=" IMAGE_PATH /search_clear.png" sortable="NO"/>
+                </columns>
+            </columnGroup>
+        </columns>
+        <nextLevel>
+            <level childrenField="invoices" enableFooters="YES" selectedKeyField="id"
+                   initialSortField="dealDate" initialSortAscending="NO" parentField="customer">
+                <columns>
+                    <column width="150" dataField="dealDescription" headerText="Deal Description" paddingLeft="40"
+                            enableExpandCollapseIcon="YES" enableCellClickRowSelect="NO" expandCollapseIconLeft="5"
+                            footerLabel="Count:" footerOperation="count" footerAlign="center"
+                            />
+                    <column type="checkbox"/>
+
+                    <column dataField="dealAmount" headerText="Deal Amount" textAlign="right"
+                            footerLabel="Total:" footerOperation="sum" footerAlign="right"
+                            footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                            labelFunction="dataGridFormatCurrencyLabelFunction"/>
+                    <column dataField="dealDate" headerText="Deal Date"
+                            labelFunction="dataGridFormatDateLabelFunction"/>
+                    <column headerText="" excludeFromSettings="YES" excludeFromPrint="YES" excludeFromExport="YES"
+                            paddingLeft="0" paddingRight="0" width="1" minWidth="1"/>
+                </columns>
+                <nextLevel>
+                    <level childrenField="lineItems" enableFooters="YES" enablePaging="YES" pageSize="3"
+                           selectedKeyField="id" parentField="deal">
+                        <columns>
+                            <column dataField="id" headerText="Invoice Number"
+                                    footerLabel="Count:" footerOperation="count" footerAlign="center"
+                                    expandCollapseIconLeft="10"
+                                    paddingLeft="45" enableExpandCollapseIcon="YES" enableCellClickRowSelect="NO"/>
+                            <column type="checkbox"/>
+
+                            <column dataField="invoiceAmount" headerText="Invoice Amount" textAlign="right"
+                                    footerLabel="Total:" footerOperation="sum" footerAlign="right"
+                                    footerOperationPrecision="2" footerFormatter="getCurrencyFormatter"
+                                    labelFunction="dataGridFormatCurrencyLabelFunction"/>
+                            <column dataField="invoiceStatus.name" headerText="Invoice Status"/>
+
+                            <column dataField="invoiceDate" headerText="Invoice Date"
+                                    labelFunction="dataGridFormatDateLabelFunction"/>
+                            <column dataField="dueDate" headerText="Due Date"
+                                    labelFunction="dataGridFormatDateLabelFunction"/>
+                            <column headerText="" excludeFromSettings="YES" excludeFromPrint="YES"
+                                    excludeFromExport="YES" paddingLeft="0" paddingRight="0" width="1" minWidth="1"/>
+                        </columns>
+                        <nextLevel>
+                            <level enableFooters="YES" selectedKeyField="id" parentField="invoice">
+                                <columns>
+
+                                    <column dataField="lineItemAmount" headerText="Line Item Amount" textAlign="right"
+                                            labelFunction="dataGridFormatCurrencyLabelFunction"/>
+                                    <column type="checkbox"/>
+                                    <column dataField="lineItemDescription" headerText="Line Item Description"
+                                            footerLabel="Count:" footerOperation="count" footerAlign="center"
+                                            />
+                                </columns>
+                            </level>
+                        </nextLevel>
+                    </level>
+                </nextLevel>
+            </level>
+        </nextLevel>
+    </level>
+</grid>

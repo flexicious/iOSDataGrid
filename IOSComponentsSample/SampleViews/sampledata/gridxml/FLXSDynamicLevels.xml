@@ -1,0 +1,18 @@
+<grid id="grid" enablePrint="YES" change="dynamiclevels_gridchangeHandler"
+      enableDrillDown="YES" enableDynamicLevels="YES" enableSelectionBubble="YES" enableTriStateCheckbox="YES"
+      enableExport="YES" enableCopy="YES" enableSelectionCascade="YES" selectedKeyField="id"
+        >
+    <level enableFooters="YES" childrenField="Region" selectedKeyField="id">
+        <columns>
+            <column dataField="name" headerText="Region/State/Rep" enableHierarchicalNestIndent="YES" width="250"/>
+            <column type="checkbox"/>
+            <column dataField="id" headerText="ID"/>
+            <column dataField="Actual" headerText="Actual" textAlign="right" headerAlign="center" footerLabel="Avg:"
+                    footerOperation="average" footerAlign="center" footerOperationPrecision="2"
+                    footerFormatter="getCurrencyFormatter" labelFunction="dataGridFormatCurrencyLabelFunction"/>
+            <column dataField="Estimate" headerText="Estimate" textAlign="right" headerAlign="center" footerLabel="Avg:"
+                    footerOperation="average" footerAlign="center" footerOperationPrecision="2"
+                    footerFormatter="getCurrencyFormatter" labelFunction="dataGridFormatCurrencyLabelFunction"/>
+        </columns>
+    </level>
+</grid>

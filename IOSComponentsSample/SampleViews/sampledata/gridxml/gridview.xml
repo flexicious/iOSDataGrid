@@ -1,0 +1,15 @@
+<grid id="grid" enableFilters="YES"
+      preferencePersistenceKey="exampleKey"
+      enableExport="NO"
+      forcePagerRow="NO" enablePaging="YES"
+      enableHeightAutoAdjust="YES" pageSize = "10">
+    <level>
+        <columns>
+            <column dataField="primaryGenreName" headerText="Genre" filterControl="MultiSelectComboBox" filterComboBoxBuildFromGrid="true"/>
+            <column dataField="artistName" headerText="Artist Name" filterControl="TextInput"/>
+            <column iconField="artworkUrl30" headerText="Art Work" enableIcon="YES" iconLeft="50" iconTop="5"/>
+            <column dataField="trackName" headerText="Track Name" filterControl="TextInput"/>
+            <column dataField="collectionName" headerText="Collection Name" filterControl="TextInput"/>
+        </columns>
+    </level>
+</grid>

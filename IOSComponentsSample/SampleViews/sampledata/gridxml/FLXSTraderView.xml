@@ -1,0 +1,11 @@
+<grid id="fdg"
+      preferencePersistenceKey="tradingView" creationComplete="tradingView_CreationComplete">
+    <columns>
+        <column headerText="Symbol" dataField="ident"/>
+        <column headerText="Name" dataField="name"/>
+        <column headerText="Last" dataField="last" cellTextColorFunction="TraderView_getCellTextColor"
+                cellBackgroundColorFunction="TraderView_getCellBackgroundColor"/>
+        <column headerText="Change" dataField="change" cellTextColorFunction="TraderView_getCellTextColor"
+                cellBackgroundColorFunction="TraderView_getCellBackgroundColor"/>
+    </columns>
+</grid>

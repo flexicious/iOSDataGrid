@@ -1,0 +1,5 @@
+<grid id="grid" enableEagerDraw="YES" showSpinnerOnCreationComplete="YES"
+      enablePrint="YES" enableHeightAutoAdjust="YES" enablePreferencePersistence="YES" enableDrillDown="YES"
+      enableSelectionCascade="YES" enableExport="YES" enableCopy="YES"
+      preferencePersistenceKey="autoResizingGrid" creationComplete="autoResizingGrid_creationCompleteHandler">
+</grid>
